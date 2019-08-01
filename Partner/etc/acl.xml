@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Malesh_Partner::partner_parent" title="Partner" translate="title" sortOrder="10">
+                    <resource id="Malesh_Partner::partner" title="Partners Management" translate="title" sortOrder="0">
+                        <resource id="Malesh_Partner::save" title="New and Edit" translate="title" sortOrder="10" />
+                        <resource id="Malesh_Partner::show" title="Show" translate="title" sortOrder="15" />
+                        <resource id="Malesh_Partner::delete" title="Delete" translate="title" sortOrder="25" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

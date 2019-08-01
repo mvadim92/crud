@@ -1,0 +1,32 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Malesh\Partner\Api\PartnerRepositoryInterface" type="Malesh\Partner\Model\PartnerRepository"/>
+    <preference for="Malesh\Partner\Api\Data\PartnerInterface" type="Malesh\Partner\Model\Partner"/>
+    <preference for="Malesh\Partner\Api\Data\PartnerSearchResultInterface" type="Malesh\Partner\Model\PartnerSearchResult"/>
+
+    <virtualType name="PartnerGridDataProvider"
+        type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">
+                Malesh\Partner\Model\Resource\Partner\Collection
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Malesh\Partner\Model\ResourceModel\Partner\Grid\Collection"
+        type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">malesh_partner</argument>
+            <argument name="resourceModel" xsi:type="string">Malesh\Partner\Model\ResourceModel\Partner</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="malesh_partner_listing_data_source" xsi:type="string">
+                    Malesh\Partner\Model\ResourceModel\Partner\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

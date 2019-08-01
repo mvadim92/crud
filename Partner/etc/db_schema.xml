@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="malesh_partner" resource="default" engine="innodb"
+           comment="Row Data Table">
+        <column xsi:type="int" name="id" padding="10" identity="true" nullable="false" primary="true"
+                comment="partner record Id"/>
+        <column xsi:type="text" name="name" size="1024" nullable="false" comment="Name"/>
+        <column xsi:type="text" name="email" size="1024" nullable="false" comment="Email"/>
+        <column xsi:type="text" name="phone" size="1024" nullable="false" comment="Phone"/>
+        <index referenceId="MALESH_PARTNER_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+    </table>
+</schema>

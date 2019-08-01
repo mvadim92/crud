@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Malesh_Partner::partner_parent"
+             title="Partner"
+             module="Malesh_Partner"
+             sortOrder="70"
+             resource="Malesh_Partner::partner_parent"/>
+        <add id="Malesh_Partner::partner"
+             title="Partners Management"
+             module="Malesh_Partner"
+             sortOrder="0"
+             parent="Malesh_Partner::partner_parent"
+             action="malesh/partner"
+             resource="Malesh_Partner::partner"/>
+    </menu>
+</config>
